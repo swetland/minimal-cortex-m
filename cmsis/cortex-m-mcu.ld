@@ -101,7 +101,7 @@ SECTIONS
     . = ALIGN(32);
   } > FLASH
 */
-/*
+
   .ARM.extab :
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
@@ -113,10 +113,11 @@ SECTIONS
     *(.ARM.exidx* .gnu.linkonce.armexidx.*)
   } > FLASH
   __exidx_end = .;
-*/
+
+/*
   /DISCARD/ : { *(.ARM.extab) *(.ARM.extab*) *(.gnu.linkonce.armextab.*) }
   /DISCARD/ : { *(.ARM.exidx) *(.ARM.exidx*) *(.gnu.linkonce.armexidx.*) }
-
+*/
   .copy.table :
   {
     . = ALIGN(4);

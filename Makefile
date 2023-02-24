@@ -1,7 +1,7 @@
 
 # Toolchain Configuration
-TOOLCHAIN := arm-none-eabi-
-#TOOLCHAIN := /toolchain/arm-eabi-10.2.0/bin/arm-eabi-
+#TOOLCHAIN := arm-none-eabi-
+TOOLCHAIN := /toolchain/arm-eabi-10.2.0/bin/arm-eabi-
 
 QEMU     := qemu-system-arm
 QFLAGS   := -cpu cortex-m4 -machine netduinoplus2 -nographic 
@@ -35,14 +35,12 @@ XLDFLAGS += -Wl,--gc-sections -Tout/script.ld
 
 LINKSCRIPT := cmsis/cortex-m-mcu.ld
 
+XLIBS := -lgcc
+
 # Project Source Files
 SRC := cmsis/startup-cm4.S
 SRC += app/hello.c
 SRC += lib/semihosting.S
-
-# enabling this will require fiddling with exidx sections
-# and generated unwind glue (yuck)
-#XLIBS := -lgcc
 
 # Build Engine
 # (no user-serviceable parts inside)
