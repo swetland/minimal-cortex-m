@@ -8,7 +8,3 @@ It provides a tiny bit of glue for the ARM SemiHosting interface
 
 The test "app" prints a message and exits qemu via the semihosting interface.
 
-Linking against libgcc is problematic, as it becomes upset about the lack of .exidx and
-friend sections for unwind tables.  One can alter the link script to not /DISCARD/ them
-but then one needs to either provide a dummy eabi unwind function or provide memcpy()
-and abort() implementations (and pick up a bunch of unwind glue code).
